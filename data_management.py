@@ -20,10 +20,15 @@ def write_data(data, filepath):
 def perform_analysis(results_df, output_file_path_comparison):
     carrot_sites = results_df[results_df['platform'] == 'Carrot']
     non_carrot_sites = results_df[results_df['platform'] == 'Non-Carrot']
+    
+    metrics = ['performance_score', 'first_contentful_paint', 'speed_index', 'largest_contentful_paint', 'interactive', 'total_blocking_time', 'cumulative_layout_shift']
+    
     comparison = {
-        'metric': ['performance_score', 'first_contentful_paint', 'speed_index', 'largest_contentful_paint', 'interactive', 'total_blocking_time', 'cumulative_layout_shift'],
-        'carrot_mean': [carrot_sites[metric].mean() for metric in comparison['metric']],
-        'non_carrot_mean': [non_carrot_sites[metric].mean() for metric in comparison['metric']]
+        'metric': metrics,
+        'carrot_mean': [carrot_sites[metric].mean() for metric in metrics],
+        'non_carrot_mean': [non_carrot_sites[metric].mean() for metric in metrics]
     }
+    
     comparison_df = pd.DataFrame(comparison)
-    comparison_df.to_csv(output_file_path_comparison, index=False)
+    write_data(comparison_df, output_file_path_comparison)
+
