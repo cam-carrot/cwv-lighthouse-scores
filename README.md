@@ -1,5 +1,4 @@
 # cwv-lighthouse-scores
-# My Project
 
 This project processes URLs to fetch Lighthouse scores using the Google PageSpeed Insights API.
 
@@ -55,7 +54,7 @@ This project processes URLs to fetch Lighthouse scores using the Google PageSpee
 ## Parallel Processing
 
 - The current setup uses parallel processing to speed up the fetching of Lighthouse scores.
-- URLs are processed concurrently using Python's `concurrent.futures.ThreadPoolExecutor`, which significantly reduces the total processing time.
+- URLs are processed concurrently using Python's `concurrent.futures.ThreadPoolExecutor`, which significantly reduces the total processing time. That said, the script does take a long time to execute when there are thousands of URLs.  When ran in a virtual environment, your console will provide updates, such as X/Y processed.
 - By default, the script uses 10 threads to handle multiple requests in parallel. This can be adjusted by modifying the `max_workers` parameter in the `main.py` script.
 
 

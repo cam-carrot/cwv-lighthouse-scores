@@ -1,5 +1,9 @@
 # config.py
+<<<<<<< HEAD
 API_KEY = 'YOUR API HERE'
+=======
+API_KEY = 'YOUR API KEY HERE'
+>>>>>>> dceacdf07d42af6a3fb3dd5c0058909031ddb412
 API_ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed'
 
 # CHANGE AS NEEDED
