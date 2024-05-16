@@ -1,5 +1,4 @@
 # cwv-lighthouse-scores
-# My Project
 
 This project processes URLs to fetch Lighthouse scores using the Google PageSpeed Insights API.
 
